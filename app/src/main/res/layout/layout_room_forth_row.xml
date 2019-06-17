@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_5sdp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/llRoom22"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom22"
+            style="@style/room_number_text"
+            android:text="22" />
+
+        <ImageView
+            android:id="@+id/ivRoom22"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRoom23"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom23"
+            style="@style/room_number_text"
+            android:text="23" />
+
+        <ImageView
+            android:id="@+id/ivRoom23"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llRoom24"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom24"
+            style="@style/room_number_text"
+            android:text="24" />
+
+        <ImageView
+            android:id="@+id/ivRoom24"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llRoom25"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom25"
+            style="@style/room_number_text"
+            android:text="24" />
+
+        <ImageView
+            android:id="@+id/ivRoom25"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+</layout>

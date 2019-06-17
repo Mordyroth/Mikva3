@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#AB008583</color>
+    <color name="colorPrimary">#058170</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#1B2BD8</color>
+
+
+    <color name="room_color">#CEC799</color>
+    <color name="pool_color">#407BB8</color>
+    <color name="border_color">#655F53</color>
+    <color name="gray">#D5D6D7</color>
+
 </resources>

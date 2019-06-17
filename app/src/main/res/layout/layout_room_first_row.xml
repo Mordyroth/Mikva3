@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llRoom1"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom1"
+                style="@style/room_number_text"
+                android:text="1" />
+
+            <ImageView
+                android:id="@+id/ivRoom1"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRoom2"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom2"
+                style="@style/room_number_text"
+                android:text="2" />
+
+            <ImageView
+                android:id="@+id/ivRoom2"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llRoom3"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom3"
+                style="@style/room_number_text"
+                android:text="3" />
+
+            <ImageView
+                android:id="@+id/ivRoom3"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llRoom4"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom4"
+                style="@style/room_number_text"
+                android:text="4" />
+
+            <ImageView
+                android:id="@+id/ivRoom4"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llRoom5"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom5"
+                style="@style/room_number_text"
+                android:text="5" />
+
+            <ImageView
+                android:id="@+id/ivRoom5"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llRoom6"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom6"
+                style="@style/room_number_text"
+                android:text="6" />
+
+            <ImageView
+                android:id="@+id/ivRoom6"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRoom7"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom7"
+                style="@style/room_number_text"
+                android:text="7" />
+
+            <ImageView
+                android:id="@+id/ivRoom7"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

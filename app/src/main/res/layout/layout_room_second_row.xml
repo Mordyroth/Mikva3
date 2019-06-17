@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_5sdp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/llRoom8"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom8"
+            style="@style/room_number_text"
+            android:text="8" />
+
+        <ImageView
+            android:id="@+id/ivRoom8"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRoom9"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom9"
+            style="@style/room_number_text"
+            android:text="9" />
+
+        <ImageView
+            android:id="@+id/ivRoom9"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llRoom10"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom10"
+            style="@style/room_number_text"
+            android:text="10" />
+
+        <ImageView
+            android:id="@+id/ivRoom10"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llRoom11"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom11"
+            style="@style/room_number_text"
+            android:text="11" />
+
+        <ImageView
+            android:id="@+id/ivRoom11"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llRoom12"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom12"
+            style="@style/room_number_text"
+            android:text="12" />
+
+        <ImageView
+            android:id="@+id/ivRoom12"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llRoom13"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom13"
+            style="@style/room_number_text"
+            android:text="13" />
+
+        <ImageView
+            android:id="@+id/ivRoom13"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRoom14"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom14"
+            style="@style/room_number_text"
+            android:text="14" />
+
+        <ImageView
+            android:id="@+id/ivRoom14"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="@dimen/_52sdp">
+
+        <LinearLayout
+            android:id="@+id/llRoom12"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="@dimen/_52sdp"
+            android:background="@drawable/room_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom12"
+                style="@style/room_number_text"
+                android:text="Room 12" />
+
+            <ImageView
+                android:id="@+id/ivRoom12"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_curve_top" />
+
+
+        <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/left_curve" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="@dimen/_52sdp">
+
+        <LinearLayout
+            android:id="@+id/llPool3"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="@dimen/_52sdp"
+            android:background="@drawable/pool_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPool3"
+                style="@style/room_number_text"
+                android:text="pool 3" />
+
+            <ImageView
+                android:id="@+id/ivPool3"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_curve" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="@dimen/_52sdp">
+
+        <LinearLayout
+            android:id="@+id/llRoom8"
+            android:layout_width="@dimen/_67sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/room_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom8"
+                style="@style/room_number_text"
+                android:text="Room 8" />
+
+            <ImageView
+                android:id="@+id/ivRoom8"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/left_curve" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="@dimen/_52sdp">
+
+        <LinearLayout
+            android:id="@+id/llPool2"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="@dimen/_52sdp"
+            android:background="@drawable/pool_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPool2"
+                style="@style/room_number_text"
+                android:text="pool 2" />
+
+            <ImageView
+                android:id="@+id/ivPool2"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_curve_top" />
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_curve" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="@dimen/_52sdp">
+
+    <LinearLayout
+        android:id="@+id/llRoom5"
+        android:layout_width="@dimen/_56sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/room_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom5"
+            style="@style/room_number_text"
+            android:text="Room 5" />
+
+        <ImageView
+            android:id="@+id/ivRoom5"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/left_curve" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="@dimen/_52sdp">
+
+    <LinearLayout
+        android:id="@+id/llPool1"
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="@dimen/_52sdp"
+        android:background="@drawable/pool_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPool1"
+            style="@style/room_number_text"
+            android:text="pool 1" />
+
+        <ImageView
+            android:id="@+id/ivPool1"
+            style="@style/room_image" />
+
+    </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_15sdp"
+           android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/right_curve" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llRoom1"
+        android:layout_width="@dimen/_66sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:background="@drawable/room_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoom1"
+            style="@style/room_number_text"
+            android:text="Room 1" />
+
+        <ImageView
+            android:id="@+id/ivRoom1"
+            style="@style/room_image" />
+
+    </LinearLayout>
+</LinearLayout>

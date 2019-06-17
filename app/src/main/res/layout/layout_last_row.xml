@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_85sdp">
+
+        <LinearLayout
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_85sdp"
+            android:background="@drawable/room_background"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/room_number_text"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Waiting Room" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_85sdp"
+        android:background="@drawable/reception_beckground">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/reception"
+            android:textColor="#ff0000"
+            android:textSize="@dimen/_8sdp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Entrance"
+            android:textColor="#ff0000"
+            android:textSize="@dimen/_8sdp" />
+
+
+        <ImageView
+
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/left_curve" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_85sdp">
+
+
+        <LinearLayout
+            android:id="@+id/llRoom14"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_85sdp"
+            android:background="@drawable/room_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom14"
+                style="@style/room_number_text"
+                android:text="Room 14" />
+
+            <ImageView
+                android:id="@+id/ivRoom14"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/top_curve" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_68sdp"
+        android:layout_height="@dimen/_85sdp">
+
+
+        <LinearLayout
+            android:id="@+id/llRoom13"
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_85sdp"
+            android:background="@drawable/room_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoom13"
+                style="@style/room_number_text"
+                android:text="Room 13" />
+
+            <ImageView
+                android:id="@+id/ivRoom13"
+                style="@style/room_image" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/top_curve" />
+    </RelativeLayout>
+
+</LinearLayout>
