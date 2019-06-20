@@ -1,5 +1,6 @@
 package com.example.android.mikva3.activity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,11 +13,12 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.android.mikva3.R;
 import com.example.android.mikva3.model.FireBaseDBInstanceModel;
 import com.example.android.mikva3.model.Help;
+import com.example.android.mikva3.model.NextRoomHelp;
 import com.example.android.mikva3.utils.AppUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -78,6 +80,14 @@ public class RoomListActivity extends BaseActivity {
     private ImageView ivRoom19;
     private ImageView ivRoom20;
 
+    private List<NextRoomHelp> mNextRoomHelpList = new ArrayList<>();
+    private FirebaseDatabase rootRef;
+    private DatabaseReference dbNextRoomHelp;
+    private String mDate;
+    private TextView tvRoomHelp;
+    private ProgressDialog progressDialog;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,9 +95,10 @@ public class RoomListActivity extends BaseActivity {
         setContentView(R.layout.activity_room_layout1);
         // mBinding = DataBindingUtil.setContentView(this, R.layout.activity_room_layout1);
 
-
+        mDate = AppUtils.getDate();
         bindViews();
         initialization();
+        AppUtils.hideKeyboard(this);
 
 
     }
@@ -134,60 +145,170 @@ public class RoomListActivity extends BaseActivity {
         ivRoom17 = findViewById(R.id.ivRoom17);
         ivRoom18 = findViewById(R.id.ivRoom18);
 
+
+        tvRoomHelp = findViewById(R.id.tvRoomHelp);
     }
 
     private void initialization() {
-        FirebaseDatabase mFirebaseInstance = FireBaseDBInstanceModel.getInstance().getmFirebaseInstance();
-        mFireBaseDatabase = mFirebaseInstance.getReference(AppUtils.HELP_TABLE);
+        rootRef = FireBaseDBInstanceModel.getInstance().getmFirebaseInstance();
+        mFireBaseDatabase = rootRef.getReference(AppUtils.HELP_TABLE);
+        dbNextRoomHelp = rootRef.getReference(AppUtils.NEXT_ROOM_HELP);
 
-        setImageData();
 
-        getDataFromServer();
-
-    }
-
-    private void setImageData() {
-
-    }
-
-    public void getDataFromServer() {
-        //showProgressDialog();
-        mHelpsFromServerList.clear();
-        mFireBaseDatabase.addValueEventListener(new ValueEventListener() {
+        runOnUiThread(new Runnable() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    for (DataSnapshot datas : dataSnapshot.getChildren()) {
-                        Help help = datas.getValue(Help.class);
-                        help.setRoom_key(datas.getKey());
-                        mHelpsFromServerList.add(help);
-                      //  Toast.makeText(RoomListActivity.this, "Data Successfully ", Toast.LENGTH_SHORT).show();
-                    }
+            public void run() {
+                getHelpDataList();
 
-                    setData();
-                }
-
-                //hideProgressDialog();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                Log.e(TAG, "Failed to read devices", error.toException());
-                //hideProgressDialog();
             }
         });
 
-       /* mFireBaseDatabase.removeEventListener(new ValueEventListener() {
+
+    }
+
+    private void getHelpData() {
+
+        showProgressBar(true);
+        mNextRoomHelpList.clear();
+
+
+        rootRef.getReference().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                recreate();
+                if (dataSnapshot.hasChild(AppUtils.NEXT_ROOM_HELP)) {
+
+
+                    dbNextRoomHelp.child(mDate).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                            if (dataSnapshot.exists()) {
+                                for (DataSnapshot data : dataSnapshot.getChildren()) {
+
+                                    NextRoomHelp help = data.getValue(NextRoomHelp.class);
+                                    mNextRoomHelpList.add(help);
+
+                                }
+
+
+                                setNextRoomData();
+
+                            }
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            showProgressBar(false);
+                        }
+                    });
+                } else {
+                    mNextRoomHelpList.clear();
+                    showProgressBar(false);
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                showProgressBar(false);
             }
-        });*/
+        });
+
+
+    }
+
+    private void setNextRoomData() {
+        int size = mNextRoomHelpList.size();
+        int minValue = 0;
+        String mRoomNumber = "";
+        for (int i = 0; i < size; i++) {
+
+            if (mNextRoomHelpList.get(i).getHelp_status().equalsIgnoreCase(Help.HELP_PRESS)) {
+
+                if (minValue == 0) {
+                    minValue = mNextRoomHelpList.get(i).getHelp_count_number();
+                    mRoomNumber = mNextRoomHelpList.get(i).getRoom_key();
+                } else {
+
+                    if (minValue > mNextRoomHelpList.get(i).getHelp_count_number()) {
+                        minValue = mNextRoomHelpList.get(i).getHelp_count_number();
+                        mRoomNumber = mNextRoomHelpList.get(i).getRoom_key();
+                    }
+
+                }
+            }
+
+            if (i == (size - 1)) {
+                if (mRoomNumber != null && !mRoomNumber.equalsIgnoreCase("")) {
+                    tvRoomHelp.setVisibility(View.VISIBLE);
+                    tvRoomHelp.setText(getString(R.string.next_room_help) + mRoomNumber);
+
+                } else {
+                    tvRoomHelp.setVisibility(View.INVISIBLE);
+                }
+
+                showProgressBar(false);
+            }
+
+        }
+
+        showProgressBar(false);
+    }
+
+
+    public void getHelpDataList() {
+
+        showProgressBar(true);
+
+
+        rootRef.getReference().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild(AppUtils.HELP_TABLE)) {
+                    mHelpsFromServerList.clear();
+
+                    mFireBaseDatabase.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                for (DataSnapshot datas : dataSnapshot.getChildren()) {
+                                    Help help = datas.getValue(Help.class);
+                                    mHelpsFromServerList.add(help);
+                                    //  Toast.makeText(RoomListActivity.this, "Data Successfully ", Toast.LENGTH_SHORT).show();
+                                }
+
+
+                                if (dataSnapshot.getChildrenCount() == mHelpsFromServerList.size()) {
+                                    getHelpData();
+                                    setData();
+                                }
+                            }
+
+                            showProgressBar(false);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError error) {
+                            showProgressBar(false);
+                            Log.e(TAG, "Failed to read devices", error.toException());
+                            //hideProgressDialog();
+                        }
+                    });
+                } else {
+                    mHelpsFromServerList.clear();
+                    showProgressBar(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                showProgressBar(false);
+            }
+        });
+
+
     }
 
     private void setData() {
@@ -309,11 +430,8 @@ public class RoomListActivity extends BaseActivity {
 
 
             }
+            showProgressBar(false);
         }
-    }
-
-    private void visible(ImageView imageView) {
-        imageView.setVisibility(View.VISIBLE);
     }
 
 
@@ -323,12 +441,12 @@ public class RoomListActivity extends BaseActivity {
         if (status.equalsIgnoreCase(Help.HELP_PRESS)) {
             imageView.setVisibility(View.VISIBLE);
 
-            setHelp(imageView,linearLayout);
+            setHelp(imageView, linearLayout);
 
         } else if (status.equalsIgnoreCase(Help.READY_PRESS)) {
             imageView.setVisibility(View.VISIBLE);
 
-            setRedy(imageView,linearLayout);
+            setRedy(imageView, linearLayout);
 
         } else if (status.equalsIgnoreCase(Help.DONE)) {
             imageView.setVisibility(View.GONE);
@@ -343,7 +461,7 @@ public class RoomListActivity extends BaseActivity {
     public void setHelp(ImageView imageView, View linearLayout) {
         linearLayout.setBackgroundResource(R.drawable.room_background);
         imageView.setImageDrawable(ContextCompat.getDrawable(RoomListActivity.this, R.drawable.circle_red));
-        setAnimation(imageView,1);
+        setAnimation(imageView, 1);
 
 
     }
@@ -352,23 +470,22 @@ public class RoomListActivity extends BaseActivity {
     public void setRedy(ImageView imageView, View linearLayout) {
         linearLayout.setBackgroundResource(R.drawable.room_background);
         imageView.setImageDrawable(ContextCompat.getDrawable(RoomListActivity.this, R.drawable.circle_green));
-       setAnimation(imageView,1);
+        setAnimation(imageView, 1);
 
 
     }
 
 
     public void setDone(ImageView imageView, View linearLayout) {
-
+        getHelpData();
         imageView.setVisibility(View.GONE);
         linearLayout.setBackgroundResource(R.drawable.blue_squere);
-        setAnimation(imageView,0);
-
+        setAnimation(imageView, 0);
 
 
     }
 
-    private void setAnimation(ImageView imageView,int animation) {
+    private void setAnimation(ImageView imageView, int animation) {
 
         Animation mAnimation = new AlphaAnimation(animation, 0);
         mAnimation.setDuration(200);
@@ -378,9 +495,18 @@ public class RoomListActivity extends BaseActivity {
         imageView.startAnimation(mAnimation);
 
 
+    }
 
+    public void showProgressBar(boolean isShow) {
+        if (progressDialog == null)
+            progressDialog = new ProgressDialog(this, R.style.AppTheme_ProgressDialog_Theme);
 
-        //   callAsynchronousTask();
-
+        progressDialog.setCancelable(false);
+        // progressDialog.setTitle("please wait...");
+        progressDialog.setCanceledOnTouchOutside(false);
+        if (isShow)
+            progressDialog.show();
+        else
+            progressDialog.dismiss();
     }
 }

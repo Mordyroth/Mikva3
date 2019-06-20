@@ -3,4 +3,18 @@
     <string name="_1">1</string>
     <string name="app_id">001</string>
     <string name="reception">Reception</string>
+    <string name="room_12">Room 12</string>
+    <string name="pool_3">pool 3</string>
+    <string name="room_8">Room 8</string>
+    <string name="pool_2">pool 2</string>
+    <string name="room_5">Room 5</string>
+    <string name="pool_1">pool 1</string>
+    <string name="room_1">Room 1</string>
+    <string name="room_2">Room 2</string>
+    <string name="room_11">Room 11</string>
+    <string name="room_10">Room 10</string>
+    <string name="room_9">Room 9</string>
+    <string name="room_7">Room 7</string>
+    <string name="room_4">Room 4</string>
+    <string name="next_room_help">Next Room Number for Help :</string>
 </resources>

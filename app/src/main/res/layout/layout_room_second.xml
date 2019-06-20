@@ -18,12 +18,14 @@
             android:layout_width="@dimen/_49sdp"
             android:layout_height="@dimen/_46sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvRoom11"
                 style="@style/room_number_text"
-                android:text="Room 11" />
+                android:layout_gravity="center"
+                android:text="@string/room_11" />
 
             <ImageView
                 android:id="@+id/ivRoom11"
@@ -37,7 +39,8 @@
             android:layout_height="@dimen/_20sdp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/_10sdp"
-            android:src="@drawable/top_curve" />
+            android:rotation="180"
+            android:src="@drawable/door_all" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -49,13 +52,14 @@
             android:layout_width="@dimen/_49sdp"
             android:layout_height="@dimen/_46sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvRoom10"
                 style="@style/room_number_text"
 
-                android:text="Room 10" />
+                android:text="@string/room_10" />
 
             <ImageView
                 android:id="@+id/ivRoom10"
@@ -68,7 +72,9 @@
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/top_curve" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -80,13 +86,14 @@
             android:layout_width="@dimen/_49sdp"
             android:layout_height="@dimen/_46sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvRoom9"
                 style="@style/room_number_text"
 
-                android:text="Room 9" />
+                android:text="@string/room_9" />
 
             <ImageView
                 android:id="@+id/ivRoom9"
@@ -98,7 +105,9 @@
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/top_curve" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
     </RelativeLayout>
 
     <View
@@ -115,13 +124,14 @@
             android:layout_width="@dimen/_49sdp"
             android:layout_height="@dimen/_46sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvRoom7"
                 style="@style/room_number_text"
 
-                android:text="Room 7" />
+                android:text="@string/room_7" />
 
             <ImageView
                 android:id="@+id/ivRoom7"
@@ -134,7 +144,8 @@
             android:layout_height="@dimen/_20sdp"
             android:layout_centerHorizontal="true"
             android:rotation="180"
-            android:src="@drawable/top_curve" />
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -146,6 +157,7 @@
             android:layout_width="@dimen/_49sdp"
             android:layout_height="@dimen/_46sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -163,7 +175,9 @@
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/top_curve" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
 
     </RelativeLayout>
 
@@ -180,23 +194,27 @@
             android:layout_width="@dimen/_49sdp"
             android:layout_height="@dimen/_46sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvRoom4"
                 style="@style/room_number_text"
-                android:text="Room 4" />
+                android:text="@string/room_4" />
 
             <ImageView
                 android:id="@+id/ivRoom4"
                 style="@style/room_image" />
 
         </LinearLayout>
+
         <ImageView
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/top_curve" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
 
     </RelativeLayout>
 
@@ -209,6 +227,7 @@
             android:layout_width="@dimen/_49sdp"
             android:layout_height="@dimen/_46sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -221,11 +240,14 @@
                 style="@style/room_image" />
 
         </LinearLayout>
+
         <ImageView
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/top_curve" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -233,21 +255,27 @@
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_46sdp"
         android:background="@drawable/room_background"
+        android:gravity="center"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/tvRoom2"
             style="@style/room_number_text"
-            android:text="Room 2" />
+            android:layout_centerInParent="true"
+            android:text="@string/room_2" />
 
         <ImageView
             android:id="@+id/ivRoom2"
-            style="@style/room_image" />
+            style="@style/room_image"
+            android:layout_below="@+id/tvRoom2"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
 
 
         <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:scaleType="fitXY"
@@ -256,13 +284,17 @@
         <ImageView
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/top_curve" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
+
         <ImageView
             android:layout_width="@dimen/_15sdp"
-            android:rotation="90"
-            android:layout_alignParentRight="true"
             android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/top_curve" />
+            android:layout_alignParentRight="true"
+            android:rotation="-90"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
 
     </RelativeLayout>
 

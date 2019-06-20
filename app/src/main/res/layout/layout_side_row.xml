@@ -3,7 +3,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/gray"
-
     android:orientation="vertical">
 
     <RelativeLayout
@@ -21,6 +20,7 @@
             <TextView
                 android:id="@+id/tvRoom18"
                 style="@style/room_number_text"
+                android:layout_centerInParent="true"
                 android:text="Room 18" />
 
             <ImageView
@@ -39,7 +39,6 @@
             android:src="@drawable/swiming_bottom" />
 
 
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -51,9 +50,9 @@
         android:orientation="vertical">
 
         <TextView
-
             android:id="@+id/tvRoom17"
             style="@style/room_number_text"
+            android:layout_centerInParent="true"
             android:text="Room 17" />
 
         <ImageView
@@ -63,17 +62,20 @@
             android:layout_centerInParent="true" />
 
         <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
             android:layout_alignParentRight="true"
             android:scaleType="fitXY"
             android:src="@drawable/swiming_top" />
 
         <ImageView
+
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
             android:layout_centerVertical="true"
-            android:layout_width="@dimen/_20sdp"
-            android:src="@drawable/top_curve"
-            android:layout_height="@dimen/_15sdp" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
 
     </RelativeLayout>
 
@@ -89,6 +91,7 @@
         <TextView
             android:id="@+id/tvRoom16"
             style="@style/room_number_text"
+            android:layout_centerInParent="true"
             android:text="Room 16" />
 
         <ImageView
@@ -99,18 +102,20 @@
             android:layout_centerInParent="true" />
 
         <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
             android:layout_alignParentRight="true"
             android:scaleType="fitXY"
             android:src="@drawable/swiming_top" />
 
 
         <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
             android:layout_centerVertical="true"
-            android:layout_width="@dimen/_20sdp"
-            android:src="@drawable/top_curve"
-            android:layout_height="@dimen/_15sdp" />
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
 
     </RelativeLayout>
 
@@ -126,18 +131,18 @@
         <TextView
             android:id="@+id/tvRoom15"
             style="@style/room_number_text"
+            android:layout_centerInParent="true"
             android:text="Room 15" />
 
         <ImageView
             android:id="@+id/ivRoom15"
             style="@style/room_image"
             android:layout_below="@id/tvRoom15"
-
             android:layout_centerInParent="true" />
 
         <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:scaleType="fitXY"
@@ -145,9 +150,11 @@
 
         <ImageView
 
-            android:layout_width="@dimen/_20sdp"
-            android:src="@drawable/top_curve"
-            android:layout_height="@dimen/_15sdp" />
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/door_all" />
 
     </RelativeLayout>
 

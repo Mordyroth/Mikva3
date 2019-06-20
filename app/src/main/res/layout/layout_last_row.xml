@@ -42,6 +42,19 @@
             android:textSize="@dimen/_8sdp" />
 
 
+
+
+
+        <ImageView
+
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/room_trans" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,16 +64,6 @@
             android:textColor="#ff0000"
             android:textSize="@dimen/_8sdp" />
 
-
-        <ImageView
-
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/left_curve" />
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -69,6 +72,7 @@
 
 
         <LinearLayout
+            android:gravity="center"
             android:id="@+id/llRoom14"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_85sdp"
@@ -76,11 +80,13 @@
             android:orientation="vertical">
 
             <TextView
+
                 android:id="@+id/tvRoom14"
                 style="@style/room_number_text"
                 android:text="Room 14" />
 
             <ImageView
+
                 android:id="@+id/ivRoom14"
                 style="@style/room_image" />
 
@@ -90,8 +96,9 @@
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_25sdp"
+            android:rotation="180"
             android:scaleType="fitXY"
-            android:src="@drawable/top_curve" />
+            android:src="@drawable/door_all" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -100,6 +107,7 @@
 
 
         <LinearLayout
+            android:gravity="center"
             android:id="@+id/llRoom13"
             android:layout_width="@dimen/_68sdp"
             android:layout_height="@dimen/_85sdp"
@@ -121,8 +129,9 @@
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_25sdp"
+            android:rotation="180"
             android:scaleType="fitXY"
-            android:src="@drawable/top_curve" />
+            android:src="@drawable/door_all" />
     </RelativeLayout>
 
 </LinearLayout>

@@ -5,6 +5,15 @@
     android:layout_gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tvRoomHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
+        android:textColor="#ff0000"
+        android:textSize="@dimen/_12sdp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +23,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+
             android:layout_weight="5.5"
             android:orientation="vertical">
 
@@ -28,7 +37,6 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
             android:layout_weight="1"
             android:orientation="vertical">
 
