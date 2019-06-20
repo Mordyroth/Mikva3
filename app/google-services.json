@@ -52,13 +52,42 @@
       },
       "oauth_client": [
         {
-          "client_id": "528264669348-cadlu8mole7r8vqq2b3qndug0rfvli50.apps.googleusercontent.com",
+          "client_id": "528264669348-08pgmbvnqdtbvbim595770g8plvp8hkn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.android.miveh2",
-            "certificate_hash": "60ccb5c4b504410e54fa0d0e8bc839b94ae01eba"
+            "certificate_hash": "d8bd3a74815eb3b0769dbc64bc391363c4bcdb2a"
           }
         },
+        {
+          "client_id": "528264669348-s2v7k3vgk655jt1lbfa4klm756332vc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKsnUy2vZvmq9CPXVQfF7Av6lY-fP16xQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528264669348-s2v7k3vgk655jt1lbfa4klm756332vc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528264669348:android:71f47601ea548f48",
+        "android_client_info": {
+          "package_name": "com.mikva4"
+        }
+      },
+      "oauth_client": [
         {
           "client_id": "528264669348-s2v7k3vgk655jt1lbfa4klm756332vc2.apps.googleusercontent.com",
           "client_type": 3

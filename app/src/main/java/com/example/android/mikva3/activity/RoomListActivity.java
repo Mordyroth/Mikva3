@@ -1,10 +1,13 @@
 package com.example.android.mikva3.activity;
 
 import android.app.ProgressDialog;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -28,6 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -86,6 +90,7 @@ public class RoomListActivity extends BaseActivity {
     private String mDate;
     private TextView tvRoomHelp;
     private ProgressDialog progressDialog;
+    private ImageView ivLanguage, ivList;
 
 
     @Override
@@ -99,9 +104,51 @@ public class RoomListActivity extends BaseActivity {
         bindViews();
         initialization();
         AppUtils.hideKeyboard(this);
+        setListener();
 
 
     }
+
+    private void setListener() {
+        ivLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Locale current = getResources().getConfiguration().locale;
+                boolean locale = current.toString().startsWith("en");
+                if (locale) {
+                    //Toast.makeText(this, current.toString(), Toast.LENGTH_LONG).show();
+                    Locale myLocale = new Locale("iw");
+                    Resources res = getResources();
+                    DisplayMetrics dm = res.getDisplayMetrics();
+                    Configuration conf = res.getConfiguration();
+                    conf.locale = myLocale;
+                    conf.setLocale(new Locale("iw"));
+                    res.updateConfiguration(conf, dm);
+
+                    recreate();
+                } else {
+                    Locale myLocale = new Locale("en");
+                    Resources res = getResources();
+                    DisplayMetrics dm = res.getDisplayMetrics();
+                    Configuration conf = res.getConfiguration();
+                    conf.locale = myLocale;
+                    conf.setLocale(new Locale("en"));
+                    res.updateConfiguration(conf, dm);
+
+                    recreate();
+                }
+            }
+        });
+
+
+        ivList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
 
     private void bindViews() {
 
@@ -146,6 +193,8 @@ public class RoomListActivity extends BaseActivity {
         ivRoom18 = findViewById(R.id.ivRoom18);
 
 
+        ivLanguage = findViewById(R.id.ivLanguage);
+        ivList = findViewById(R.id.ivList);
         tvRoomHelp = findViewById(R.id.tvRoomHelp);
     }
 

@@ -163,7 +163,7 @@
             <TextView
                 android:id="@+id/tvRoom6"
                 style="@style/room_number_text"
-                android:text="Room 6" />
+                android:text="@string/room_6" />
 
             <ImageView
                 android:id="@+id/ivRoom6"
@@ -233,7 +233,7 @@
             <TextView
                 android:id="@+id/tvRoom3"
                 style="@style/room_number_text"
-                android:text="Room 3" />
+                android:text="@string/room_3" />
 
             <ImageView
                 android:id="@+id/ivRoom3"

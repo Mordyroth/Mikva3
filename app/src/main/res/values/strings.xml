@@ -17,4 +17,14 @@
     <string name="room_7">Room 7</string>
     <string name="room_4">Room 4</string>
     <string name="next_room_help">Next Room Number for Help :</string>
+    <string name="waiting_room">Waiting Room</string>
+    <string name="entrance">Entrance</string>
+    <string name="room_14">Room 14</string>
+    <string name="room_13">Room 13</string>
+    <string name="room_18">Room 18</string>
+    <string name="room_17">Room 17</string>
+    <string name="room_16">Room 16</string>
+    <string name="room_15">Room 15</string>
+    <string name="room_6">Room 6</string>
+    <string name="room_3">Room 3</string>
 </resources>

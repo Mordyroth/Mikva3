@@ -6,6 +6,7 @@
 
 
     <color name="room_color">#CEC799</color>
+    <color name="dark_yellow">#918C6D</color>
     <color name="pool_color">#4B86BD</color>
     <color name="border_color">#655F53</color>
     <color name="gray">#D5D6D7</color>

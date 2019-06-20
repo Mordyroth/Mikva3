@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">צאנז מקוה</string>
+    <string name="room_1">חדר 1</string>
+    <string name="pool_3">בריכה 3</string>
+    <string name="pool_2">בריכה 2</string>
+    <string name="pool_1">בריכה13</string>
+    <string name="room_10">חדר 10</string>
+    <string name="room_11">חדר 11</string>
+    <string name="room_12">חדר 12</string>
+    <string name="room_2">חדר 2</string>
+    <string name="room_4">חדר 4</string>
+    <string name="room_5">חדר 5</string>
+    <string name="room_7">חדר 7</string>
+    <string name="room_8">חדר 8</string>
+    <string name="room_9">חדר 9</string>
+    <string name="reception">קבלה</string>
+    <string name="room_13"> חדר 13 </string>
+    <string name="room_14">חדר 14</string>
+    <string name="room_15">חדר 15</string>
+    <string name="room_16">חדר 16</string>
+    <string name="room_17">חדר 17</string>
+    <string name="room_18">חדר 18</string>
+    <string name="room_3">חדר 3</string>
+    <string name="room_6">חדר 6</string>
+    <string name="waiting_room">חדר המתנה</string>
+
+</resources>

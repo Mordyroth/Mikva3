@@ -20,7 +20,7 @@
                 style="@style/room_number_text"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Waiting Room" />
+                android:text="@string/waiting_room" />
 
 
         </LinearLayout>
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="Entrance"
+            android:text="@string/entrance"
             android:textColor="#ff0000"
             android:textSize="@dimen/_8sdp" />
 
@@ -83,7 +83,7 @@
 
                 android:id="@+id/tvRoom14"
                 style="@style/room_number_text"
-                android:text="Room 14" />
+                android:text="@string/room_14" />
 
             <ImageView
 
@@ -117,7 +117,7 @@
             <TextView
                 android:id="@+id/tvRoom13"
                 style="@style/room_number_text"
-                android:text="Room 13" />
+                android:text="@string/room_13" />
 
             <ImageView
                 android:id="@+id/ivRoom13"
