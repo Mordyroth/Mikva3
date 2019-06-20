@@ -20,7 +20,8 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="@dimen/_5sdp"
             android:textColor="#ff0000"
-            android:textSize="@dimen/_12sdp" />
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"/>
 
 
         <LinearLayout

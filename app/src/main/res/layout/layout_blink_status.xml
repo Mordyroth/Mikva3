@@ -5,13 +5,13 @@
     android:id="@+id/table_map"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_3sdp"
+        android:layout_margin="@dimen/_2sdp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/red_circle_map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
                 android:layout_margin="@dimen/_3sdp"
                 app:srcCompat="@drawable/circle_red" />
 
@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Help (Blinking - Next)"
-                android:textSize="@dimen/_10sdp" />
+                android:textSize="@dimen/_8sdp" />
         </LinearLayout>
 
         <LinearLayout
@@ -43,9 +43,9 @@
 
             <ImageView
                 android:id="@+id/green_circle_map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_margin="@dimen/_3sdp"
                 app:srcCompat="@drawable/circle_green"
                 />
 
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ready (Blinking - Next)"
-                android:textSize="@dimen/_10sdp" />
+                android:textSize="@dimen/_8sdp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -63,19 +63,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
         android:orientation="horizontal">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_3sdp"
-            android:gravity="center_vertical">
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/orange_circle_map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
                 android:layout_margin="@dimen/_3sdp"
                 app:srcCompat="@drawable/circle_orange" />
 
@@ -84,14 +85,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ready For Cleaning"
-                android:textSize="@dimen/_10sdp" />
+                android:textSize="@dimen/_8sdp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/_3sdp"
-            android:gravity="center">
+            android:gravity="center_vertical">
 
             <ImageView
                 android:id="@+id/blue_squere_map"
@@ -105,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Room Cleaned And Ready"
-                android:textSize="@dimen/_10sdp" />
+                android:textSize="@dimen/_8sdp" />
         </LinearLayout>
 
     </LinearLayout>

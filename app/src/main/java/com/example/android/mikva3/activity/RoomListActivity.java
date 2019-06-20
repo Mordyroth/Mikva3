@@ -1,6 +1,7 @@
 package com.example.android.mikva3.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -144,7 +145,8 @@ public class RoomListActivity extends BaseActivity {
         ivList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(RoomListActivity.this,HelpStatusListActivity.class);
+                startActivity(intent);
             }
         });
     }

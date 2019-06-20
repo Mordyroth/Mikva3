@@ -24,5 +24,11 @@
     <string name="room_6">חדר 6</string>
     <string name="waiting_room">חדר המתנה</string>
 
+    <string name="str_room_no">Room No</string>
+    <string name="str_start_date">Start Date</string>
+    <string name="str_end_date">End Date</string>
+    <string name="str_date">Date</string>
+    <string name="str_status">Status</string>
+
 
 </resources>
