@@ -44,7 +44,7 @@
     <RelativeLayout
         android:id="@+id/llRoom17"
         android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_33sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_gravity="end"
         android:background="@drawable/room_background"
         android:orientation="vertical">
@@ -83,7 +83,7 @@
     <RelativeLayout
         android:id="@+id/llRoom16"
         android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_33sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_gravity="end"
         android:background="@drawable/room_background"
         android:orientation="vertical">
@@ -123,7 +123,7 @@
     <RelativeLayout
         android:id="@+id/llRoom15"
         android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_33sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_gravity="end"
         android:background="@drawable/room_background"
         android:orientation="vertical">

@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/red_circle_map"
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
                 android:layout_margin="@dimen/_3sdp"
                 app:srcCompat="@drawable/circle_red" />
 
@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Help (Blinking - Next)"
-                android:textSize="@dimen/_8sdp" />
+                android:textSize="@dimen/_6sdp" />
         </LinearLayout>
 
         <LinearLayout
@@ -43,8 +43,8 @@
 
             <ImageView
                 android:id="@+id/green_circle_map"
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
                 android:layout_margin="@dimen/_3sdp"
                 app:srcCompat="@drawable/circle_green"
                 />
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ready (Blinking - Next)"
-                android:textSize="@dimen/_8sdp" />
+                android:textSize="@dimen/_6sdp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -75,8 +75,8 @@
 
             <ImageView
                 android:id="@+id/orange_circle_map"
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
                 android:layout_margin="@dimen/_3sdp"
                 app:srcCompat="@drawable/circle_orange" />
 
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ready For Cleaning"
-                android:textSize="@dimen/_8sdp" />
+                android:textSize="@dimen/_6sdp" />
         </LinearLayout>
 
         <LinearLayout
@@ -96,8 +96,8 @@
 
             <ImageView
                 android:id="@+id/blue_squere_map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
                 android:layout_margin="@dimen/_3sdp"
                 app:srcCompat="@drawable/blue_squere" />
 
@@ -106,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Room Cleaned And Ready"
-                android:textSize="@dimen/_8sdp" />
+                android:textSize="@dimen/_6sdp" />
         </LinearLayout>
 
     </LinearLayout>

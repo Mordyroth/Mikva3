@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_85sdp">
+        android:layout_height="@dimen/_75sdp">
 
         <LinearLayout
             android:layout_width="@dimen/_100sdp"
@@ -22,16 +21,14 @@
                 android:gravity="center"
                 android:text="@string/waiting_room" />
 
-
         </LinearLayout>
     </RelativeLayout>
 
 
     <RelativeLayout
         android:layout_width="@dimen/_150sdp"
-        android:layout_height="@dimen/_85sdp"
+        android:layout_height="@dimen/_75sdp"
         android:background="@drawable/reception_beckground">
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,11 +39,7 @@
             android:textSize="@dimen/_8sdp" />
 
 
-
-
-
         <ImageView
-
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
@@ -68,25 +61,22 @@
 
     <RelativeLayout
         android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_85sdp">
-
+        android:layout_height="@dimen/_75sdp">
 
         <LinearLayout
-            android:gravity="center"
             android:id="@+id/llRoom14"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_85sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-
                 android:id="@+id/tvRoom14"
                 style="@style/room_number_text"
                 android:text="@string/room_14" />
 
             <ImageView
-
                 android:id="@+id/ivRoom14"
                 style="@style/room_image" />
 
@@ -103,15 +93,14 @@
 
     <RelativeLayout
         android:layout_width="@dimen/_68sdp"
-        android:layout_height="@dimen/_85sdp">
-
+        android:layout_height="@dimen/_75sdp">
 
         <LinearLayout
-            android:gravity="center"
             android:id="@+id/llRoom13"
             android:layout_width="@dimen/_68sdp"
             android:layout_height="@dimen/_85sdp"
             android:background="@drawable/room_background"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView

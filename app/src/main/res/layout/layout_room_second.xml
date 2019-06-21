@@ -7,7 +7,7 @@
 
     <View
         android:layout_width="@dimen/_15sdp"
-        android:layout_height="@dimen/_67sdp" />
+        android:layout_height="@dimen/_58sdp" />
 
     <RelativeLayout
         android:layout_width="@dimen/_49sdp"
@@ -112,7 +112,7 @@
 
     <View
         android:layout_width="@dimen/_15sdp"
-        android:layout_height="@dimen/_65sdp" />
+        android:layout_height="@dimen/_58sdp" />
 
 
     <RelativeLayout
@@ -183,7 +183,7 @@
 
     <View
         android:layout_width="@dimen/_15sdp"
-        android:layout_height="@dimen/_65sdp" />
+        android:layout_height="@dimen/_58sdp" />
 
     <RelativeLayout
         android:layout_width="@dimen/_49sdp"

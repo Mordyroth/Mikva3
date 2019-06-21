@@ -49,4 +49,15 @@ public class AppUtils {
         return formattedDate;
 
     }
+
+
+    public static String getDate(long date) {
+
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(date);
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(new Date (date));
+        return formattedDate;
+
+    }
 }

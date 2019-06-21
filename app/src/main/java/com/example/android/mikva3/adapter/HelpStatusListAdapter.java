@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.example.android.mikva3.R;
 import com.example.android.mikva3.model.Help;
+import com.example.android.mikva3.utils.AppUtils;
 
 import java.util.List;
 
@@ -43,11 +44,13 @@ public class HelpStatusListAdapter extends RecyclerView.Adapter<HelpStatusListAd
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Help help = moviesList.get(position);
-        holder.txtRoom.setText(help.getRoom_key());
-        holder.txtStart.setText(String.valueOf(help.getReady_press_time()));
-        holder.txtEnd.setText(String.valueOf(help.getDone_press_time()));
-        holder.txtDate.setText(String.valueOf(help.getHelp_cancel_time()));
-        holder.txtStatus.setText(help.getStatus());
+        if(Help.HELP_PRESS.equalsIgnoreCase(help.getStatus()) || Help.READY_PRESS.equalsIgnoreCase(help.getStatus())) {
+            holder.txtRoom.setText(help.getRoom_key());
+            holder.txtStart.setText(AppUtils.getDate(help.getReady_press_time()));
+            holder.txtEnd.setText(AppUtils.getDate(help.getDone_press_time()));
+            holder.txtDate.setText(AppUtils.getDate(help.getHelp_cancel_time()));
+            holder.txtStatus.setText(help.getStatus());
+        }
     }
 
     @Override

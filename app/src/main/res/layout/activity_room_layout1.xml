@@ -17,14 +17,14 @@
             android:id="@+id/tvRoomHelp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
             android:padding="@dimen/_5sdp"
             android:textColor="#ff0000"
-            android:textSize="@dimen/_12sdp"
-            android:visibility="gone"/>
+            android:textSize="@dimen/_6sdp"
+            android:visibility="gone" />
 
 
         <LinearLayout
+            android:id="@+id/layouttop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -63,7 +63,25 @@
             layout="@layout/layout_blink_status" />
 
 
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/item_help_status_header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </LinearLayout>
     </LinearLayout>
+
 
     <ImageView
         android:id="@+id/ivList"
@@ -72,28 +90,34 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/_10sdp"
         android:background="@drawable/rounded_green"
-        android:padding="@dimen/_5sdp"
         android:elevation="@dimen/_10sdp"
-        android:src="@drawable/ic_view_list_white_24dp" />
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_view_list_white_24dp"
+        android:visibility="gone"/>
 
-    <android.support.design.widget.FloatingActionButton
+    <!--<android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_invisible"
         android:layout_width="@dimen/_5sdp"
         android:layout_height="@dimen/_5sdp"
         android:layout_gravity="top|end"
         android:visibility="invisible"
         app:layout_anchor="@id/ivList"
-        app:layout_anchorGravity="top" />
+        app:layout_anchorGravity="top" />-->
 
     <ImageView
         android:id="@+id/ivLanguage"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
-        android:layout_gravity="top|end"
         android:background="@drawable/rounded_green"
-        android:padding="@dimen/_5sdp"
         android:elevation="@dimen/_10sdp"
+        app:layout_anchor="@id/table"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_80sdp"
         android:src="@drawable/ic_language_white_24dp"
-        app:layout_anchor="@id/fab_invisible"
-        app:layout_anchorGravity="top" />
+        android:layout_gravity="bottom|end"
+        app:layout_anchorGravity="top|right"
+
+        />
 </android.support.design.widget.CoordinatorLayout>

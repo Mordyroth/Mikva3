@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.android.mikva3.R;
+import com.example.android.mikva3.adapter.HelpStatusListAdapter;
 import com.example.android.mikva3.model.FireBaseDBInstanceModel;
 import com.example.android.mikva3.model.Help;
 import com.example.android.mikva3.model.NextRoomHelp;
@@ -92,6 +96,13 @@ public class RoomListActivity extends BaseActivity {
     private TextView tvRoomHelp;
     private ProgressDialog progressDialog;
     private ImageView ivLanguage, ivList;
+
+
+
+
+    //private List<Help> helpList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private HelpStatusListAdapter mAdapter;
 
 
     @Override
@@ -198,6 +209,8 @@ public class RoomListActivity extends BaseActivity {
         ivLanguage = findViewById(R.id.ivLanguage);
         ivList = findViewById(R.id.ivList);
         tvRoomHelp = findViewById(R.id.tvRoomHelp);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
     }
 
     private void initialization() {
@@ -213,8 +226,6 @@ public class RoomListActivity extends BaseActivity {
 
             }
         });
-
-
     }
 
     private void getHelpData() {
@@ -330,6 +341,11 @@ public class RoomListActivity extends BaseActivity {
                                     //  Toast.makeText(RoomListActivity.this, "Data Successfully ", Toast.LENGTH_SHORT).show();
                                 }
 
+                                mAdapter = new HelpStatusListAdapter(mHelpsFromServerList);
+                                RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                                recyclerView.setLayoutManager(mLayoutManager);
+                                recyclerView.setItemAnimator(new DefaultItemAnimator());
+                                recyclerView.setAdapter(mAdapter);
 
                                 if (dataSnapshot.getChildrenCount() == mHelpsFromServerList.size()) {
                                     getHelpData();

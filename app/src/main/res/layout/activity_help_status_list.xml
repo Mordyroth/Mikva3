@@ -7,7 +7,7 @@
     <include
         layout="@layout/item_help_status_header"
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/_40sdp" />
+        android:layout_height="@dimen/_35sdp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
