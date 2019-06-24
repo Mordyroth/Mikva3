@@ -1,5 +1,6 @@
 package com.example.android.mikva3.adapter;
 
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import java.util.List;
 public class HelpStatusListAdapter extends RecyclerView.Adapter<HelpStatusListAdapter.MyViewHolder> {
 
     private List<Help> moviesList;
+    final Handler timerHandler = new Handler();
+    private Runnable timerRunnable;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView txtRoom, txtStart, txtEnd, txtDate, txtStatus;
@@ -42,15 +45,50 @@ public class HelpStatusListAdapter extends RecyclerView.Adapter<HelpStatusListAd
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        Help help = moviesList.get(position);
-        if(Help.HELP_PRESS.equalsIgnoreCase(help.getStatus()) || Help.READY_PRESS.equalsIgnoreCase(help.getStatus())) {
-            holder.txtRoom.setText(help.getRoom_key());
-            holder.txtStart.setText(AppUtils.getDate(help.getReady_press_time()));
-            holder.txtEnd.setText(AppUtils.getDate(help.getDone_press_time()));
-            holder.txtDate.setText(AppUtils.getDate(help.getHelp_cancel_time()));
-            holder.txtStatus.setText(help.getStatus());
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
+        final Help help = moviesList.get(position);
+
+        long startTime = System.currentTimeMillis() - help.getHelp_press_time();
+
+        help.setTimer(startTime);
+
+        holder.txtRoom.setText(help.getRoom_key());
+
+        holder.txtStart.setText(AppUtils.getDate(help.getHelp_press_time()));
+
+        if (!help.isStartTimer()) {
+            timerRunnable = new Runnable() {
+
+                @Override
+                public void run() {
+
+                    long millis = (help.getTimer()) + 1000;
+
+
+                    help.setTimer(millis);
+
+                    long seconds = (millis / 1000) % 60;
+                    long minutes = (millis / (1000 * 60)) % 60;
+                    long hours = millis / (1000 * 60 * 60);
+
+
+                    holder.txtEnd.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+
+                    timerHandler.postDelayed(this, 1000);
+
+                }
+            };
+            help.setStartTimer(true);
+
+            timerHandler.postDelayed(timerRunnable, 0);
         }
+
+
+
+    }
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override

@@ -27,6 +27,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text=""
+        android:visibility="gone"
         android:textColor="#000000"
         android:background="@drawable/item_border_light"
         android:textSize="16dp" />
@@ -51,6 +52,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text=""
+        android:visibility="gone"
         android:background="@drawable/item_border_light"
         android:textColor="#000000"
         android:textSize="16dp" />
@@ -63,6 +65,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text=""
+        android:visibility="gone"
         android:background="@drawable/item_border_light"
         android:textColor="#000000"
         android:textSize="16dp" />

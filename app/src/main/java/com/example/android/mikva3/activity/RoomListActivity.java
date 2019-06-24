@@ -1,9 +1,6 @@
 package com.example.android.mikva3.activity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,7 +8,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -33,10 +29,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -96,8 +92,7 @@ public class RoomListActivity extends BaseActivity {
     private TextView tvRoomHelp;
     private ProgressDialog progressDialog;
     private ImageView ivLanguage, ivList;
-
-
+    private AVLoadingIndicatorView avi;
 
 
     //private List<Help> helpList = new ArrayList<>();
@@ -125,41 +120,11 @@ public class RoomListActivity extends BaseActivity {
         ivLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Locale current = getResources().getConfiguration().locale;
-                boolean locale = current.toString().startsWith("en");
-                if (locale) {
-                    //Toast.makeText(this, current.toString(), Toast.LENGTH_LONG).show();
-                    Locale myLocale = new Locale("iw");
-                    Resources res = getResources();
-                    DisplayMetrics dm = res.getDisplayMetrics();
-                    Configuration conf = res.getConfiguration();
-                    conf.locale = myLocale;
-                    conf.setLocale(new Locale("iw"));
-                    res.updateConfiguration(conf, dm);
-
-                    recreate();
-                } else {
-                    Locale myLocale = new Locale("en");
-                    Resources res = getResources();
-                    DisplayMetrics dm = res.getDisplayMetrics();
-                    Configuration conf = res.getConfiguration();
-                    conf.locale = myLocale;
-                    conf.setLocale(new Locale("en"));
-                    res.updateConfiguration(conf, dm);
-
-                    recreate();
-                }
+                AppUtils.setLanguage(RoomListActivity.this);
             }
         });
 
 
-        ivList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RoomListActivity.this,HelpStatusListActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
 
@@ -204,6 +169,8 @@ public class RoomListActivity extends BaseActivity {
         ivRoom16 = findViewById(R.id.ivRoom16);
         ivRoom17 = findViewById(R.id.ivRoom17);
         ivRoom18 = findViewById(R.id.ivRoom18);
+
+        avi = findViewById(R.id.avi);
 
 
         ivLanguage = findViewById(R.id.ivLanguage);
@@ -306,6 +273,8 @@ public class RoomListActivity extends BaseActivity {
                 if (mRoomNumber != null && !mRoomNumber.equalsIgnoreCase("")) {
                     tvRoomHelp.setVisibility(View.VISIBLE);
                     tvRoomHelp.setText(getString(R.string.next_room_help) + mRoomNumber);
+                    setOnlyNext(mRoomNumber);
+
 
                 } else {
                     tvRoomHelp.setVisibility(View.INVISIBLE);
@@ -330,6 +299,7 @@ public class RoomListActivity extends BaseActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChild(AppUtils.HELP_TABLE)) {
                     mHelpsFromServerList.clear();
+                    final List<Help> helpsFromServerList = new ArrayList<>();
 
                     mFireBaseDatabase.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -338,23 +308,27 @@ public class RoomListActivity extends BaseActivity {
                                 for (DataSnapshot datas : dataSnapshot.getChildren()) {
                                     Help help = datas.getValue(Help.class);
                                     mHelpsFromServerList.add(help);
+
+
+                                    if (Help.HELP_PRESS.equalsIgnoreCase(help.getStatus()) || Help.READY_PRESS.equalsIgnoreCase(help.getStatus())) {
+                                        helpsFromServerList.add(help);
+                                    }
                                     //  Toast.makeText(RoomListActivity.this, "Data Successfully ", Toast.LENGTH_SHORT).show();
                                 }
 
-                                mAdapter = new HelpStatusListAdapter(mHelpsFromServerList);
-                                RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                                recyclerView.setLayoutManager(mLayoutManager);
-                                recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                recyclerView.setAdapter(mAdapter);
 
-                                if (dataSnapshot.getChildrenCount() == mHelpsFromServerList.size()) {
-                                    getHelpData();
-                                    setData();
-                                }
+                                getHelpData();
+                                setData();
+                                setRecyclerViewData(helpsFromServerList);
+
+                            } else {
+
+                                recyclerView.setVisibility(View.GONE);
                             }
 
                             showProgressBar(false);
                         }
+
 
                         @Override
                         public void onCancelled(DatabaseError error) {
@@ -376,6 +350,16 @@ public class RoomListActivity extends BaseActivity {
         });
 
 
+    }
+
+    private void setRecyclerViewData(List<Help> helpsFromServerList) {
+
+
+        mAdapter = new HelpStatusListAdapter(helpsFromServerList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
     }
 
     private void setData() {
@@ -502,13 +486,133 @@ public class RoomListActivity extends BaseActivity {
     }
 
 
+    private void setOnlyNext(String roomKey) {
+
+
+        switch (roomKey) {
+            case "1":
+
+
+                setStatus(ivRoom1, llRoom1);
+
+                break;
+
+            case "2":
+                setStatus(ivRoom2, llRoom2);
+                break;
+            case "3":
+                setStatus(ivRoom3, llRoom3);
+                break;
+            case "4":
+                setStatus(ivRoom4, llRoom4);
+                break;
+            case "5":
+                setStatus(ivRoom5, llRoom5);
+                break;
+            case "6":
+
+                setStatus(ivRoom6, llRoom6);
+                break;
+            case "7":
+
+                setStatus(ivRoom7, llRoom7);
+                break;
+
+            case "8":
+
+                setStatus(ivRoom8, llRoom8);
+                break;
+            case "9":
+
+                setStatus(ivRoom9, llRoom9);
+                break;
+            case "10":
+
+                setStatus(ivRoom10, llRoom10);
+                break;
+            case "11":
+
+                setStatus(ivRoom11, llRoom11);
+                break;
+
+            case "12":
+
+                setStatus(ivRoom12, llRoom12);
+                break;
+
+            case "13":
+
+                setStatus(ivRoom13, llRoom13);
+                break;
+            case "14":
+
+                setStatus(ivRoom14, llRoom14);
+                break;
+
+
+            case "15":
+
+                setStatus(ivRoom15, llRoom15);
+                break;
+
+            case "16":
+
+                setStatus(ivRoom16, llRoom16);
+                break;
+            case "17":
+
+                setStatus(ivRoom17, llRoom17);
+                break;
+            case "18":
+
+                setStatus(ivRoom18, llRoom18);
+                break;
+            case "19":
+
+                setStatus(ivRoom19, llRoom19);
+                break;
+            case "20":
+
+                setStatus(ivRoom20, llRoom20);
+                break;
+                   /* case "21":
+                         ivRoom21.setVisibility(View.VISIBLE);
+                        setStatus( ivRoom21,  llRoom21, mHelpsFromServerList.get(i).getStatus());
+                        break;
+                    case "22":
+                        mBinding.row4.ivRoom22.setVisibility(View.VISIBLE);
+                        setStatus(mBinding.row4.ivRoom22, mBinding.row4.llRoom22, mHelpsFromServerList.get(i).getStatus());
+                        break;
+                    case "23":
+                        mBinding.row4.ivRoom23.setVisibility(View.VISIBLE);
+                        setStatus(mBinding.row4.ivRoom23, mBinding.row4.llRoom23, mHelpsFromServerList.get(i).getStatus());
+                        break;
+                    case "24":
+                        mBinding.row4.ivRoom24.setVisibility(View.VISIBLE);
+                        setStatus(mBinding.row4.ivRoom24, mBinding.row4.llRoom24, mHelpsFromServerList.get(i).getStatus());
+                        break;
+                    case "25":
+                        mBinding.row4.ivRoom25.setVisibility(View.VISIBLE);
+                        setStatus(mBinding.row4.ivRoom25, mBinding.row4.llRoom25, mHelpsFromServerList.get(i).getStatus());
+                        break;
+*/
+
+        }
+
+
+    }
+
+    private void setStatus(ImageView imageView, View linearLayout) {
+        imageView.setVisibility(View.VISIBLE);
+        setHelp(imageView, linearLayout);
+    }
+
     public void setStatus(ImageView imageView, View linearLayout, String status) {
 
 
         if (status.equalsIgnoreCase(Help.HELP_PRESS)) {
-            imageView.setVisibility(View.VISIBLE);
-
-            setHelp(imageView, linearLayout);
+            /*imageView.setVisibility(View.VISIBLE);
+            setHelp(imageView, linearLayout);*/
 
         } else if (status.equalsIgnoreCase(Help.READY_PRESS)) {
             imageView.setVisibility(View.VISIBLE);
@@ -564,7 +668,7 @@ public class RoomListActivity extends BaseActivity {
 
     }
 
-    public void showProgressBar(boolean isShow) {
+    /*public void showProgressBar(boolean isShow) {
         if (progressDialog == null)
             progressDialog = new ProgressDialog(this, R.style.AppTheme_ProgressDialog_Theme);
 
@@ -575,5 +679,27 @@ public class RoomListActivity extends BaseActivity {
             progressDialog.show();
         else
             progressDialog.dismiss();
+    }*/
+
+
+    public void showProgressBar(boolean isProgress) {
+        if (isProgress) {
+            startAnim();
+        } else {
+            stopAnim();
+        }
+    }
+
+
+    void startAnim() {
+        avi.setVisibility(View.VISIBLE);
+        avi.show();
+        // or avi.smoothToShow();
+    }
+
+    void stopAnim() {
+        avi.setVisibility(View.GONE);
+        avi.hide();
+        // or avi.smoothToHide();
     }
 }

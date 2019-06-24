@@ -27,7 +27,8 @@
         android:gravity="center"
         android:text="@string/str_start_date"
         android:textColor="#000000"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txtEnd"
@@ -37,7 +38,7 @@
         android:layout_weight="1"
         android:background="@drawable/item_border_dark"
         android:gravity="center"
-        android:text="@string/str_end_date"
+        android:text="Request Time"
         android:textColor="#000000"
         android:textSize="16dp" />
 
@@ -51,7 +52,8 @@
         android:gravity="center"
         android:text="@string/str_date"
         android:textColor="#000000"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txtStatus"
@@ -63,6 +65,7 @@
         android:gravity="center"
         android:text="@string/str_status"
         android:textColor="#000000"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="gone" />
 
 </LinearLayout>
