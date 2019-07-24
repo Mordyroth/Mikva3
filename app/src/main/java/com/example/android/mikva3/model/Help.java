@@ -7,7 +7,9 @@ public class Help {
     public static String HELP_PRESS = "HELP_PRESS";
     public static String HELP_CANCEL = "HELP_CANCEL";
     public static String DONE = "DONE";
+    private long timer;
 
+    private boolean isStartTimer=false;
 
     private String room_key;
 
@@ -131,4 +133,19 @@ public class Help {
     }
 
 
+    public long getTimer() {
+        return timer;
+    }
+
+    public void setTimer(long timer) {
+        this.timer = timer;
+    }
+
+    public boolean isStartTimer() {
+        return isStartTimer;
+    }
+
+    public void setStartTimer(boolean startTimer) {
+        isStartTimer = startTimer;
+    }
 }
